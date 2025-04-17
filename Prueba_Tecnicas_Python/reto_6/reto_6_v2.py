@@ -1,4 +1,4 @@
-"""
+"""-------------------------------|RETO 6|----------------------------------------------
  * Crea un programa que calcule quien gana más partidas al piedra,
  * papel, tijera, lagarto, spock.
  * - El resultado puede ser: "Player 1", "Player 2", "Tie" (empate)
@@ -41,14 +41,16 @@ def ganador(games):
     tie = 0
 
     for game in games:
+        print(f'Player_1: {game[0]} | Player_2: {game[1]}')
+
         if game[1] in wins[game[0]]:
             player_1 += 1
         elif game[0] != game[1]:
             player_2 += 1
         else:
             tie += 1
-
-    print(f'player_1:{player_1}, player_2:{player_2}, tie:{tie}')
+        print(f'player_1 :{player_1}, player_2 :{player_2}, tie :{tie}')
+        print("-"*25)
 
     if player_1 > player_2:
         return "player_1"

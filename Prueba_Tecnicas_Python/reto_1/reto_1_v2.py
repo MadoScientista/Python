@@ -6,7 +6,12 @@
 * - Múltiplos de 5 por la palabra "buzz".
 * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 * 
-*------------------------|NOTAS IMPORTANTES|------------------------------------
+*--------------------------|NECESITA SABER|--------------------------------------
+* Ciclo for
+* if, elif y else
+* range()
+* def: Crear y llamar funciones
+*--------------------------|CONSIDERACIONES|--------------------------------------
 * 
 * 1. Un número  "n" es divisible entre 3 si el resto de la división entre "n" y 3
 * es cero --> n % 3 == 0. Lo mismo para números divisibles entre 5 --> n % 5 == 0
@@ -29,8 +34,8 @@
 def fizzBuzz(num):
 
     for n in range(1, num+1):        # Para cada número "n" dentro del rango
-        multiplo_3 = not n % 3       # True si el resto es 0 False para otro valor
-        multiplo_5 = not n % 5       # True si el resto es 0 False para otro valor
+        multiplo_3 = not n % 3       # True si el resto es 0, False para otro valor
+        multiplo_5 = not n % 5       # True si el resto es 0, False para otro valor
 
         if multiplo_3:
             if multiplo_5:
