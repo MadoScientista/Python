@@ -6,16 +6,10 @@
 * - Múltiplos de 5 por la palabra "buzz".
 * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 * 
-*-------------------------|NECESITA SABER|-----------------------------
-* Ciclo for
-* if, elif y else
-* range()
 * ------------------------|CONSIDERACIONES|----------------------------
-* 
-* 1. Un número  "n" es divisible entre 3 si el resto de la división 
+* 1. Un número "n" es divisible entre 3 si el resto de la división 
 *    entre "n" y 3 es cero --> n % 3 == 0. Lo mismo para números 
 *    divisibles entre 5 --> n % 5 == 0
-*
 * -------------------------------------------------------------------"""
 
 
