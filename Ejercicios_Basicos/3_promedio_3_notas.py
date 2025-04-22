@@ -1,6 +1,9 @@
-# Ingresa 3 notas
-# Calcula promedio
-# Informa si aprobó
+"""------|Promedio de 3 notas|-------------
+* Solicita al usuario ingresar 3 notas
+* Convierte los Strings ingresados a Float
+* Calcula el promedio de notas
+* Informa el promedio en pantalla
+*---------------------------------------"""
 
 
 # Bienvenida
