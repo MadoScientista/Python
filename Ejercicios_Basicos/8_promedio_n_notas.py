@@ -1,6 +1,9 @@
-
-
-
+"""------------------|Promedio n Notas|-----------------------
+* - Pide al usuario ingresar la cantidad de notas a promediar
+* - Usa el ciclo for para pedir una a una las notas
+* - Calcula el promedio de notas
+* - Informa si el estudiante ha aprobado
+*----------------------------------------------------------"""
 
 # Bienvenida
 print("-"*40) # Escribe 40 veces el caracter "-""
