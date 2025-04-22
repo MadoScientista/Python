@@ -1,6 +1,7 @@
 # Solicita nombre al usuario
 # Imprime datos por pantalla
 
-nombre = input("Ingresa tu nombre: ") # Input recibe String ingresado
+# Almacena lo ingresado en la variable nombre
+nombre = input("Ingresa tu nombre: ") 
 
 print("hola " + nombre)
