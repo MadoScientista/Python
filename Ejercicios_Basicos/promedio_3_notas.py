@@ -4,7 +4,7 @@
 
 
 # Bienvenida
-print("-"*40)
+print("-"*40) # Escribe 40 veces el caracter "-""
 print("Bienvenido a la calculadora de promedios")
 print("-"*40)
 
