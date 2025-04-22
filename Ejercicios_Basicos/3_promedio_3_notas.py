@@ -20,6 +20,9 @@ num3 = float(input("Ingresa la tercera nota: "))
 # Calcula el promedio
 avg = (num1+num2+num3)/3
 
+# Redondeamos a 1 decimal
+avg = round(avg, 1)
+
 # Informa al usuario el promedio
 print("-"*30)
 print(f"El promedio entre {num1}, {num2}, {num3} es: {avg}")
