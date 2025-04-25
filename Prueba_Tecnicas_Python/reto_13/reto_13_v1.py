@@ -17,14 +17,19 @@ from math import ceil
 
 
 def random_words():
+    """Devuelve una palabra aleatoria dentro de la lista"""
+
     words = ["semana", "colegio", "almohada",
              "camarote", "perspicaz", "detalles",
              "celular", "computador", "telenovela",
              "escritorio", "conejo ambulante"]
+
     return words[randint(0, len(words)-1)]
 
 
-def charToHide(word):
+def char_to_hide(word):
+    """Devuelve caracteres que se ocultarán"""
+
     word_no_space = word.replace(" ", "")
     min_show = ceil((len(word_no_space)*0.4))
     char_hide = []
@@ -43,6 +48,8 @@ def charToHide(word):
 
 
 def play(max_attempts, word_to_find, char_to_find):
+    """Permite al usuario interactuar con la consola"""
+
     remaining_attempts = max_attempts
     char_list = char_to_find
 
@@ -76,12 +83,13 @@ def play(max_attempts, word_to_find, char_to_find):
     print(f'La palabra era {word_to_find}')
 
 
-def gameBegin():
+def game_begin():
+    """Inicia las variables necesarias y lanza el juego"""
     word_to_play = random_words()
-    char_to_hide = charToHide(word_to_play)
+    hide_char = char_to_hide(word_to_play)
     attepmts = 4
 
-    play(attepmts, word_to_play, char_to_hide)
+    play(attepmts, word_to_play, hide_char)
 
 
-gameBegin()
+game_begin()
