@@ -35,7 +35,7 @@ def begin_test():
         os.system('cls')
 
         # Establece la cadena de texto de cada pregunta
-        ask = ask + f'Pregunta n°{i+1} {question[0]}\n'
+        ask = f'Pregunta n°{i+1} {question[0]}\n'
         ord_options = question[1]
 
         options = sample(ord_options, len(ord_options))
@@ -66,10 +66,20 @@ def begin_test():
     # Ordena las casas según el puntaje obtenido
     houses = sorted(houses.items(), reverse=True,
                     key=lambda item: item[1])
+    
+    
 
+    os.system('cls')
+
+    print("Afinidad con las casas")
+    for house in houses:
+        print(f"{house[0]}: {house[1]}")
+
+    print("-"*80)
     # Establece la cadena de texto y muestra el resultado
     your_house = f"El sombrero seleccionador ha hablado, tu casa es: ¡¡¡{houses[0][0]}!!!"
-    return print(your_house)
+    print(your_house)
+    print("-"*80)
 
 
 begin_test()  # Llama a la función para comenzar el test
