@@ -63,7 +63,10 @@ def comprar(lista_de_productos):
 
     while True:
         # Lista los productos disponibles
+        print("-"*30)
         print("Productos disponibles:")
+        print("-"*30)
+
         listar_productos(lista_de_productos)
         print('Ingrese "q" para salir')
 
