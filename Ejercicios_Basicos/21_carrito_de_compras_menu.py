@@ -107,7 +107,7 @@ def comprar(lista_de_productos):
 
 
     
-    return productos_que_lleva, total, total*1.5
+    return productos_que_lleva, total, total*1.19
 
 def sacar_boleta(mi_boleta:dict):
 
