@@ -3,9 +3,9 @@
 # Será mostrado en la boleta, con un saludo
 # 2.- comprar, poner productos para poder comprar
 # con su precio correspondiente
-# 3.- Sacar boleta, calcular el precio neto 
+# 3.- Sacar boleta, calcular el precio neto
 # y el precio más el IVA. Mostrar totales
-#bonus: contar la cantidad de artículos
+# bonus: contar la cantidad de artículos
 # 4.- Salir
 # Consideraciones:
 # Por lo menos 3 productos
@@ -30,19 +30,23 @@ lista_productos = [
     ("fideos", 890),
     ("bebida 2L", 1800),
     ("galletas", 870),
+    ("torta", 5000),
+    ("jugo", 1000),
 ]
 
 
 boleta = {
-    "Nombre Cliente" : "Cliente",
+    "Nombre Cliente": "Cliente",
     "Total Neto": 0,
     "Total con IVA": 0,
     "Productos": {}
 }
 
+
 def listar_productos(mis_productos):
     for i, producto in enumerate(mis_productos):
         print(f"{i+1}.- {producto[0].capitalize()}")
+
 
 def verifica_entero(num_int):
     try:
@@ -51,10 +55,12 @@ def verifica_entero(num_int):
     except ValueError:
         print("Ingresa solo números")
 
+
 def nombre_en_boleta():
     os.system('cls')
     name = input("Ingresa nombre de cliente: ")
     return name
+
 
 def comprar(lista_de_productos):
     os.system('cls')
@@ -92,7 +98,6 @@ def comprar(lista_de_productos):
                 print(f"Se ha agregado {nombre_producto} al carro")
                 print(f"El total actual es: {total}")
 
-
                 if nombre_producto not in productos_que_lleva:
                     productos_que_lleva[nombre_producto] = 1
 
@@ -100,23 +105,21 @@ def comprar(lista_de_productos):
                     productos_que_lleva[nombre_producto] += 1
 
                 # print(productos_que_lleva)
-                
 
         except ValueError:
             print("Ingresa solo números")
 
-
-    
     return productos_que_lleva, total, total*1.19
 
-def sacar_boleta(mi_boleta:dict):
+
+def sacar_boleta(mi_boleta: dict):
 
     print("-"*30)
-    print(f"Nombre de cliente: {mi_boleta["Nombre Cliente"]}")
+    print(f'Nombre de cliente: {mi_boleta["Nombre Cliente"]}')
     print("-"*30)
 
-    print(f"Total neto: {mi_boleta["Total Neto"]}")
-    print(f"Total con IVA: {mi_boleta["Total con IVA"]}")
+    print(f'Total neto: {mi_boleta["Total Neto"]}')
+    print(f'Total con IVA: {mi_boleta["Total con IVA"]}')
 
     print("-"*30)
     print("Los productos que lleva son: ")
@@ -124,15 +127,16 @@ def sacar_boleta(mi_boleta:dict):
 
     productos_en_boleta = mi_boleta["Productos"]
     for i, x in productos_en_boleta.items():
-        print(x,i.capitalize())
+        print(x, i.capitalize())
 
     print("-"*30)
+
 
 def carrito_supermercado():
 
     os.system('cls')
     print(msj_bienvenida)
-   
+
     while True:
         try:
             option = int(input(msj_opciones))
@@ -142,7 +146,8 @@ def carrito_supermercado():
                     boleta["Nombre Cliente"] = nombre_en_boleta()
 
                 case 2:
-                    boleta["Productos"], boleta["Total Neto"], boleta["Total con IVA"] = comprar(lista_productos)
+                    boleta["Productos"], boleta["Total Neto"], boleta["Total con IVA"] = comprar(
+                        lista_productos)
                     os.system('cls')
 
                 case 3:
@@ -158,7 +163,7 @@ def carrito_supermercado():
                     print("-"*30)
                     print("Opción no válida")
                     print("-"*30)
-                    
+
         except ValueError:
             os.system('cls')
             print("-"*30)
