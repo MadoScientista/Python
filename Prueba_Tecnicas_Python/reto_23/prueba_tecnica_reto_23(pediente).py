@@ -11,3 +11,18 @@
  *
  * Se pueden usar librerías para realizar la lógica de conexión a la base de datos.
 """
+
+import mysql.connector
+
+config = {
+    'user': 'mouredev_read',
+    'password': 'mouredev_pass',
+    'host': 'mysql-5707.dinaserver.com',
+    'database': 'moure_test',
+    'port': '3306',
+    'raise_on_warnings': True,
+}
+
+cnx = mysql.connector.connect(**config)
+
+cnx.close()
