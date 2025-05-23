@@ -331,9 +331,7 @@ class SamCash():
 
 
 # Ruta json
-# SAM_CASH_USERS = "/sam_cash_users.json"
-
-SAM_CASH_USERS = "C:/Users/samue/Desktop/Github_MadoScientista/Python/Ejercicios_Basicos/cajero_automatico/sam_cash_users.json"
+SAM_CASH_USERS = "/sam_cash_users.json"
 
 cajero = SamCash(SAM_CASH_USERS)
 
