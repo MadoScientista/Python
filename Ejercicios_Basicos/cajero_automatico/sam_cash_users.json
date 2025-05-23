@@ -1,0 +1,26 @@
+{
+    "Samuel": {
+        "pin": "1122",
+        "debit_amount": 712700,
+        "attempts": 3,
+        "active": true
+    },
+    "Natalia": {
+        "pin": "1234",
+        "debit_amount": 405050,
+        "attempts": 3,
+        "active": true
+    },
+    "Carmen": {
+        "pin": "3333",
+        "debit_amount": 900000,
+        "attempts": 3,
+        "active": true
+    },
+    "Alejandro": {
+        "pin": "4444",
+        "debit_amount": 20000,
+        "attempts": 3,
+        "active": true
+    }
+}
