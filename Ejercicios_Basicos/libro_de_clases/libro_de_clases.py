@@ -501,6 +501,6 @@ class ClassRegister():
         pass
 
 
-ruta_libro = "C:/Users/samue/Desktop/Github_MadoScientista/Python/Ejercicios_Basicos/libro_de_clases/estudiantes.json"
+ruta_libro = "ruta"
 mi_libro = ClassRegister(ruta_libro)
 mi_libro.open_book()
