@@ -1,0 +1,127 @@
+{
+    "curso": "1° medio C",
+    "lista": [
+        {
+            "id": 1,
+            "nombre": "Alejandro",
+            "apellido": "Narváez",
+            "rut": "18352669-5",
+            "telefono": 93565258
+        },
+        {
+            "id": 2,
+            "nombre": "Natalia",
+            "apellido": "Blanco",
+            "rut": "17352469-4",
+            "telefono": 914542178
+        },
+        {
+            "id": 3,
+            "nombre": "Carmen",
+            "apellido": "Rubio",
+            "rut": "18352346-5",
+            "telefono": 936547414
+        },
+        {
+            "id": 4,
+            "nombre": "Elvira",
+            "apellido": "Rubio",
+            "rut": "1662669-2",
+            "telefono": 947510122
+        },
+        {
+            "id": 5,
+            "nombre": "Samuel",
+            "apellido": "Cortés",
+            "rut": "18889661-k",
+            "telefono": 978744153
+        },
+        {
+            "id": 6,
+            "nombre": "Gabriel",
+            "apellido": "Cortés",
+            "rut": "18372169-4",
+            "telefono": 996335362
+        }
+    ],
+    "asignaturas": {
+        "Matemática": [
+            {
+                "id": 1,
+                "nombre": "Alejandro",
+                "apellido": "Narváez",
+                "notas": []
+            },
+            {
+                "id": 2,
+                "nombre": "Natalia",
+                "apellido": "Blanco",
+                "notas": []
+            },
+            {
+                "id": 3,
+                "nombre": "Carmen",
+                "apellido": "Rubio",
+                "notas": [
+                    2.0
+                ]
+            },
+            {
+                "id": 4,
+                "nombre": "Elvira",
+                "apellido": "Rubio",
+                "notas": []
+            },
+            {
+                "id": 5,
+                "nombre": "Samuel",
+                "apellido": "Cortés",
+                "notas": []
+            },
+            {
+                "id": 6,
+                "nombre": "Gabriel",
+                "apellido": "Cortés",
+                "notas": []
+            }
+        ],
+        "Física": [
+            {
+                "id": 1,
+                "nombre": "Alejandro",
+                "apellido": "Narváez",
+                "notas": []
+            },
+            {
+                "id": 2,
+                "nombre": "Natalia",
+                "apellido": "Blanco",
+                "notas": []
+            },
+            {
+                "id": 3,
+                "nombre": "Carmen",
+                "apellido": "Rubio",
+                "notas": []
+            },
+            {
+                "id": 4,
+                "nombre": "Elvira",
+                "apellido": "Rubio",
+                "notas": []
+            },
+            {
+                "id": 5,
+                "nombre": "Samuel",
+                "apellido": "Cortés",
+                "notas": []
+            },
+            {
+                "id": 6,
+                "nombre": "Gabriel",
+                "apellido": "Cortés",
+                "notas": []
+            }
+        ]
+    }
+}
