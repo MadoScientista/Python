@@ -6,9 +6,9 @@ class ClassRegister():
     """Libro de clases"""
 
     def __init__(self, book):
-        self.book = book
-        self.open = True
-        self.class_info = {}
+        self.book = book        # Ruta del json con datos del libro de clases
+        self.open = True        # Indica si el libro está en uso
+        self.class_info = {}    # Almacena la información del json del libro de clases
 
     def load_class_info(self):
         """Carga datos de json estudiantes"""
@@ -34,21 +34,25 @@ class ClassRegister():
     def show_menu_option_number(self, options: dict, head=None, width=44):
         """Muestra menú interactivo con opciones numpéricas"""
 
-        option_list = list(options.items())
-        while True:
+        option_list = list(options.items())  # Lista las opciones disponibles
+        while True: 
 
+            # Imprime el encabezado en caso de que esté definido
             if head:
                 self.print_head(head)
 
+            # Imprime las opciones disponibles
             for index, info in enumerate(option_list):
                 print(f"{index+1}.- {info[0]}")
             print("─"*width)
 
+            # Intenta capturar el número de la opción seleccionada
             try:
                 option = int(
                     input("Ingrese el número de la opción que desea: ")) - 1
                 os.system('cls')
 
+                # Si la opción es válida ejecuta la función asociada
                 if option in range(len(option_list)):
                     option_list[option][1]()
                     break
@@ -78,24 +82,28 @@ class ClassRegister():
     def show_main_menu(self):
         """Muestra menú principal"""
 
+        # Establece opciones disponibles para el menú principal
         book_option = {
             "Asignaturas": lambda x=True: self.show_subjects_menu(head=x),
             "Estudiantes": lambda x=True: self.show_student_menu(head=x),
             "Cerrar libro de clases": self.close_book
-        }
+        }  
 
+        # Establece el encabezado e imprime el menú principal
         bo_head = f'Libro de clases {self.class_info["curso"]}'
         self.show_menu_option_number(book_option, bo_head)
 
     def show_subjects_menu(self, width=44, head=False):
         """Muestra menú de asignaturas"""
-
+        
+        # Decide si mostrar o no el encabezado
         if head:
             head = "Asignaturas"
         else:
             head = None
             print("─"*width)
 
+        # Establece las opciones disponibles e imprime el menú de asignaturas
         ssm_options = {
             "Lista de asignaturas": self.show_subjecs,
             "Agregar Asignatura": self.add_subjects,
@@ -108,10 +116,14 @@ class ClassRegister():
     def show_subjecs(self):
         """Muestra asignaturas del libro de clases y menú de asignaturas"""
 
+        # Imprime el encabezado
         self.print_head("Asignaturas")
 
+        # Verifica si hay asignaturas inscritas
         if len(self.class_info["asignaturas"]):
+
             subject_list = []
+            # Imprime las asignaturas inscritas
             for idx, subject in enumerate(self.class_info["asignaturas"].keys()):
                 subject_list.append(subject)
                 print(f'{idx+1}. {subject}')
@@ -119,13 +131,14 @@ class ClassRegister():
             print("─"*44)
             print("Para ver información de una asignatura ingrese su número: ")
             print("─"*44)
-            n_subject = input(
-                "Para volver al menú principal solo presione enter: ")
+
+            n_subject = input("Para volver al menú principal solo presione enter: ")
             os.system('cls')
 
             try:
                 n_subject = int(n_subject)-1
 
+                # Si la opción es válida muestra la información de la asignatura seleccionada
                 if n_subject in range(len(subject_list)):
                     self.show_subject_info(subject_list[n_subject])
                     return
@@ -142,11 +155,12 @@ class ClassRegister():
     def show_subject_info(self, subject_name: str):
         """Muestra información de la asignatura"""
 
+        # Imprime encabezado
         self.print_head(subject_name)
-
         print("N° Apellido Nombre | Notas")
         print("─"*44)
 
+        # Imprime el listado de estudiantes y sus notas en la asignatura
         for student in self.class_info["asignaturas"][subject_name]:
             notas = ""
             for nota in student["notas"]:
@@ -154,6 +168,7 @@ class ClassRegister():
             print(
                 f'{student["id"]}.- {student["apellido"]} {student["nombre"]} {notas}')
 
+        # Verifica si el usuario quiere realizar una acción con algún estudiante
         print("─"*44)
         print("1. Agregar nota a estudiante")
         print("2. Borrar nota a estudiante")
@@ -316,7 +331,6 @@ class ClassRegister():
     def add_student(self):
         """Agrega a un nuevo estudiante a la lista general y de todas las asignaturas"""
 
-        # adding = True
         while True:
             self.print_head("Agregando estudiante")
             name = input("Ingrese el nombre del estudiante: ")
@@ -324,6 +338,7 @@ class ClassRegister():
 
             new_id = 0
 
+            # Busca si el estudiante ya se encuentra en la lista
             for student in self.class_info["lista"]:
                 if student["nombre"] == name and student["apellido"] == last_name:
                     os.system('cls')
@@ -334,12 +349,14 @@ class ClassRegister():
                 if new_id <= student["id"]:
                     new_id = student["id"] + 1
 
+            # Crea diccionario con información del estudiante
             new_student = {
                 "id": new_id,
                 "nombre": name,
                 "apellido": last_name
             }
 
+            # Solicita confirmación
             print(f"¿Está seguro que desea agregar a {name} {last_name}?")
             print("1. Volver a escribir nombre o apellido")
             print("2. Volver al menú principal")
@@ -430,7 +447,8 @@ class ClassRegister():
     def add_score(self, subject_name):
         """Permite agregar notas a un estudiante"""
 
-        print("Ingrese número de la lista del estudiante: ")
+        self.print_head("Agregando calificaciones")
+        print("INGRESE EL NÚMERO DE LA LISTA DEL ESTUDIANTE")
         print("─"*44)
         confirm = input("Para volver atrás solo presione enter\n")
         os.system('cls')
@@ -450,6 +468,9 @@ class ClassRegister():
                 name = student["nombre"] + " " + student["apellido"]
                 relative_possition = idx
                 find_student = True
+
+        if not find_student:
+            print(f"No se ha encontrado al estudiante n° {n_student}")
 
         while find_student:
             self.print_head(f'Notas de {name} en {subject_name}', width=50)
@@ -498,9 +519,64 @@ class ClassRegister():
                 os.system('cls')
 
     def del_score(self, subject_name):
-        pass
+        """Permite eliminar notas a un estudiante en particular"""
 
+        self.print_head("Borrando calificaciones")
+        print("INGRESE EL NÚMERO DE LA LISTA DEL ESTUDIANTE")
+        print("─"*44)
+        confirm = input("Para volver atrás solo presione enter\n")
+        os.system('cls')
 
+        try:
+            n_student = int(confirm)
+        except ValueError:
+            print("Solo ingrese números")
+            self.show_subject_info(subject_name)
+            return
+
+        find_student = False
+        name = None
+        relative_possition = None
+        for idx, student in enumerate(self.class_info["asignaturas"][subject_name]):
+            if student["id"] == n_student:
+                name = student["nombre"] + " " + student["apellido"]
+                relative_possition = idx
+                find_student = True
+
+        if not find_student:
+            print(f"No se ha encontrado al estudiante n° {n_student}")
+
+        cantidad_notas = len(self.class_info["asignaturas"][subject_name][n_student])
+        if len(self.class_info["asignaturas"][subject_name][n_student]) == 0:
+            print(f"{name} no tiene calificaciones")
+            self.show_subject_info(subject_name)
+            return
+        
+        for idx, nota in enumerate(self.class_info["asignaturas"][subject_name][relative_possition]["notas"]):
+            print(f"{idx+1}.- {nota}")
+        print("─"*44)
+
+        print("Ingrese el número de la nota que desea eliminar")
+        confirm = input("Para volver atrás solo presione enter: ")
+        os.system('cls')
+
+        try:
+            n_nota = int(confirm) - 1
+            if n_nota in range(cantidad_notas):
+                self.class_info["asignaturas"][subject_name][relative_possition]["notas"].pop(n_nota)
+                self.save_class_info()
+                print("Se ha eliminado la nota con éxito")
+            else:
+                print(f"No se ha encontrado la nota {n_nota}")
+            
+            self.show_subject_info(subject_name)
+
+        except ValueError:
+            self.print_head(subject_name)
+            self.show_subject_info(subject_name)
+            return
+
+            
 ruta_libro = "ruta"
 mi_libro = ClassRegister(ruta_libro)
 mi_libro.open_book()

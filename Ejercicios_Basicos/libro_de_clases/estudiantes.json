@@ -50,7 +50,9 @@
                 "id": 1,
                 "nombre": "Alejandro",
                 "apellido": "Narváez",
-                "notas": []
+                "notas": [
+                    5.0
+                ]
             },
             {
                 "id": 2,
@@ -91,6 +93,50 @@
                 "nombre": "Alejandro",
                 "apellido": "Narváez",
                 "notas": []
+            },
+            {
+                "id": 2,
+                "nombre": "Natalia",
+                "apellido": "Blanco",
+                "notas": []
+            },
+            {
+                "id": 3,
+                "nombre": "Carmen",
+                "apellido": "Rubio",
+                "notas": [
+                    5.0,
+                    6.0
+                ]
+            },
+            {
+                "id": 4,
+                "nombre": "Elvira",
+                "apellido": "Rubio",
+                "notas": []
+            },
+            {
+                "id": 5,
+                "nombre": "Samuel",
+                "apellido": "Cortés",
+                "notas": []
+            },
+            {
+                "id": 6,
+                "nombre": "Gabriel",
+                "apellido": "Cortés",
+                "notas": []
+            }
+        ],
+        "Historia": [
+            {
+                "id": 1,
+                "nombre": "Alejandro",
+                "apellido": "Narváez",
+                "notas": [
+                    5.0,
+                    5.6
+                ]
             },
             {
                 "id": 2,
